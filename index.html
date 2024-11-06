@@ -9,32 +9,33 @@
 
   <body>
     <h1 class="title">Welcome to DevsInc Dice Game</h1>
-    <p>Select a dice to roll</p>
+    <h3>Select a dice to roll</h3>
+
+    <!-- dice type selector -->
     <select name="diceType" id="diceType">
       <option value="6">D6</option>
       <option value="10">D10</option>
     </select>
+
+    <!-- button to roll the dice -->
     <button onclick="rollDice()">Dice Roll</button>
+
+    <!-- display result  -->
     <div id="result">Roll dice to see result!</div>
+
     <script>
-      // function rollDice(diceType) {
-      //   let result = Math.ceil(Math.random() * diceType);
-      //   return result; // Return the result for easier testing
-      // }
-      // // Mock Math.random
-      // Math.random = () => 0.5;
-      // // Run a simple test
-      // let diceType = 10; // D6 dice
-      // let expected = 5; // Expected result with Math.random() mocked to 0.5
-      // let actual = rollDice(diceType);
-      // if (actual === expected) {
-      //   console.log("Test passed: Correct result");
-      // } else {
-      //   console.error(`Test failed: Expected ${expected}, but got ${actual}`);
-      // }
+      // Function to roll the dice based on selected dice type
       function rollDice() {
-        const result = Math.floor(Math.random() * 6) + 1;
-        document.getElementById("result").innerText = "You rolled: ";
+        // Get the selected dice type from the dropdown
+        const diceType = parseInt(document.getElementById("diceType").value);
+
+        // Generate a random roll result
+        const result = Math.ceil(Math.random() * diceType);
+
+        // Display the result
+        document.getElementById(
+          "result"
+        ).textContent = `You rolled a D${diceType} and got: ${result}`;
       }
     </script>
   </body>
