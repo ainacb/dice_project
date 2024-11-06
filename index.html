@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>DevsInc Dice Game</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
@@ -13,5 +14,28 @@
       <option value="6">D6</option>
       <option value="10">D10</option>
     </select>
+    <button onclick="rollDice()">Dice Roll</button>
+    <div id="result">Roll dice to see result!</div>
+    <script>
+      // function rollDice(diceType) {
+      //   let result = Math.ceil(Math.random() * diceType);
+      //   return result; // Return the result for easier testing
+      // }
+      // // Mock Math.random
+      // Math.random = () => 0.5;
+      // // Run a simple test
+      // let diceType = 10; // D6 dice
+      // let expected = 5; // Expected result with Math.random() mocked to 0.5
+      // let actual = rollDice(diceType);
+      // if (actual === expected) {
+      //   console.log("Test passed: Correct result");
+      // } else {
+      //   console.error(`Test failed: Expected ${expected}, but got ${actual}`);
+      // }
+      function rollDice() {
+        const result = Math.floor(Math.random() * 6) + 1;
+        document.getElementById("result").innerText = "You rolled: ";
+      }
+    </script>
   </body>
 </html>
